@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "JAYARAJ",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 0.6, "left": -3.6, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 236.22,
+      "left": 192.56,
+      "attrs": { "digits": "2", "colon": "", "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "sevseg1:A", "mega:A0", "green", [ "v-9.6", "h-19.2" ] ],
+    [ "mega:A1", "sevseg1:B", "green", [ "v45.3", "h16" ] ],
+    [ "sevseg1:C", "mega:A2", "green", [ "v8.76", "h-28.8", "v-86.4", "h28.8" ] ],
+    [ "sevseg1:D", "mega:A3", "green", [ "v8.76", "h-57.6", "v-86.4", "h38.4" ] ],
+    [ "sevseg1:E", "mega:A4", "green", [ "v8.76", "h-48", "v-86.4", "h48" ] ],
+    [ "sevseg1:F", "mega:A5", "green", [ "v-9.6", "h-9.6" ] ],
+    [ "sevseg1:G", "mega:A6", "green", [ "h0", "v8.76", "h28.8", "v-86.4", "h-28.8" ] ],
+    [ "sevseg1:DP", "mega:A7", "green", [ "v8.76", "h57.6", "v-86.4", "h-19.2" ] ],
+    [ "sevseg1:DIG1", "mega:A8", "black", [ "v-9.6", "h48" ] ],
+    [ "sevseg1:DIG2", "mega:A9", "black", [ "v-9.6", "h48" ] ]
+  ],
+  "dependencies": {}
+}
