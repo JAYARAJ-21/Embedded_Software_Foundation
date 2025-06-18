@@ -1,5 +1,5 @@
 //Uncomment if you are using Arduino
-//#include <Arduino.h>
+#include <Arduino.h>
  
 #define off (*out=0x00);
 #define DELAY delay(2);
@@ -26,6 +26,7 @@ while(1)
   display_B();
   display_C();
   display_D();
+  display_E();
    
 }
  
@@ -143,6 +144,25 @@ void display_D(void)
 
 void display_E(void)
 {
+    data_register_init();
+    for(volatile uint8_t i=0; i<63; i++)
+    {
+    off; *ground=~(1<<0); *out=0x7f;
+    DELAY;
+    off; *ground=~(1<<1); *out=0x41;
+    DELAY;
+    off; *ground=~(1<<2); *out=0x40;
+    DELAY;
+    off; *ground=~(1<<3); *out=0x7f;
+    DELAY;
+    off; *ground=~(1<<4); *out=0x40;
+     DELAY;
+    off; *ground=~(1<<5); *out=0x41;
+     DELAY;
+    off; *ground=~(1<<6); *out=0x7f;
+     DELAY;
+    }
+    
 
 }
 /*
